@@ -7,6 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+
+
+
+
+
 if (builder.Environment.IsDevelopment())
 {
     builder.Services.AddDbContext<RazorPagesUserContext>(options =>

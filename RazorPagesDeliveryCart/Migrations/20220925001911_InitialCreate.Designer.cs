@@ -9,13 +9,28 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace RazorPagesDeliveryCart.Migrations
 {
     [DbContext(typeof(RazorPagesUserContext))]
-    [Migration("20220925000459_InitialCreate")]
+    [Migration("20220925001911_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.9");
+
+            modelBuilder.Entity("RazorPagesDeliveryCart.Models.Employee", b =>
+                {
+                    b.Property<int>("EmployeeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("EmployeeID");
+
+                    b.ToTable("Employee");
+                });
 
             modelBuilder.Entity("RazorPagesDeliveryCart.Models.User", b =>
                 {

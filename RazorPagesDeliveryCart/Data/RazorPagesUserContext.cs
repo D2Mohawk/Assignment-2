@@ -13,4 +13,6 @@ using RazorPagesDeliveryCart.Models;
         }
 
         public DbSet<RazorPagesDeliveryCart.Models.User> User { get; set; } = default!;
+
+        public DbSet<RazorPagesDeliveryCart.Models.Employee>? Employee { get; set; }
     }
